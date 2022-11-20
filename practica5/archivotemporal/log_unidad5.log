@@ -1,0 +1,69 @@
+2022-11-20 13:18:25,527 -ERROR - medal  - ... Error al procesar el archivo
+Traceback (most recent call last):
+  File "/home/sabrina/airflow/dags/practica5/DAG_Unidad_5.py", line 61, in read_top10
+    df = pd.read_csv('/home/sabrina/airflow/practica5/dags/medals.csv')
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 685, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 457, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 895, in __init__
+    self._make_engine(self.engine)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 1135, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "/usr/lib/python3/dist-packages/pandas/io/parsers.py", line 1917, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas/_libs/parsers.pyx", line 382, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas/_libs/parsers.pyx", line 689, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File b'/home/sabrina/airflow/practica5/dags/medals.csv' does not exist: b'/home/sabrina/airflow/practica5/dags/medals.csv'
+2022-11-20 13:20:43,019 -ERROR - medal  - ... Error al procesar el archivo
+Traceback (most recent call last):
+  File "/home/sabrina/airflow/dags/practica5/DAG_Unidad_5.py", line 70, in read_top10
+    to_countries_df.to_excel('/home/sabrina/airflow/practica5/top10_medals_by_country.xlsx')
+  File "/usr/lib/python3/dist-packages/pandas/core/generic.py", line 2250, in to_excel
+    formatter.write(
+  File "/usr/lib/python3/dist-packages/pandas/io/formats/excel.py", line 742, in write
+    writer.save()
+  File "/usr/lib/python3/dist-packages/pandas/io/excel/_openpyxl.py", line 44, in save
+    return self.book.save(self.path)
+  File "/usr/lib/python3/dist-packages/openpyxl/workbook/workbook.py", line 392, in save
+    save_workbook(self, filename)
+  File "/usr/lib/python3/dist-packages/openpyxl/writer/excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "/usr/lib/python3.8/zipfile.py", line 1251, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sabrina/airflow/practica5/top10_medals_by_country.xlsx'
+2022-11-20 13:21:33,010 -ERROR - medal  - ... Error al procesar el archivo
+Traceback (most recent call last):
+  File "/home/sabrina/airflow/dags/practica5/DAG_Unidad_5.py", line 70, in read_top10
+    to_countries_df.to_excel('/home/sabrina/airflow/practica5/top10_medals_by_country.xlsx')
+  File "/usr/lib/python3/dist-packages/pandas/core/generic.py", line 2250, in to_excel
+    formatter.write(
+  File "/usr/lib/python3/dist-packages/pandas/io/formats/excel.py", line 742, in write
+    writer.save()
+  File "/usr/lib/python3/dist-packages/pandas/io/excel/_openpyxl.py", line 44, in save
+    return self.book.save(self.path)
+  File "/usr/lib/python3/dist-packages/openpyxl/workbook/workbook.py", line 392, in save
+    save_workbook(self, filename)
+  File "/usr/lib/python3/dist-packages/openpyxl/writer/excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "/usr/lib/python3.8/zipfile.py", line 1251, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sabrina/airflow/practica5/archivotemporal/top10_medals_by_country.xlsx'
+2022-11-20 13:29:08,837 -ERROR - medal  - ... Error al procesar el archivo
+Traceback (most recent call last):
+  File "/home/sabrina/airflow/dags/practica5/DAG_Unidad_5.py", line 70, in read_top10
+    to_countries_df.to_excel('/home/sabrina/airflow/practica5/archivotemporal/top10_medals_by_country.xlsx')
+  File "/usr/lib/python3/dist-packages/pandas/core/generic.py", line 2250, in to_excel
+    formatter.write(
+  File "/usr/lib/python3/dist-packages/pandas/io/formats/excel.py", line 742, in write
+    writer.save()
+  File "/usr/lib/python3/dist-packages/pandas/io/excel/_openpyxl.py", line 44, in save
+    return self.book.save(self.path)
+  File "/usr/lib/python3/dist-packages/openpyxl/workbook/workbook.py", line 392, in save
+    save_workbook(self, filename)
+  File "/usr/lib/python3/dist-packages/openpyxl/writer/excel.py", line 291, in save_workbook
+    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
+  File "/usr/lib/python3.8/zipfile.py", line 1251, in __init__
+    self.fp = io.open(file, filemode)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/sabrina/airflow/practica5/archivotemporal/top10_medals_by_country.xlsx'
+2022-11-20 13:32:26,770 -INFO - medal  - ... Archivo procesado correctamente ...
